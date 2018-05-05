@@ -17,6 +17,7 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
 use craft\services\Plugins;
 use rias\widthfieldtype\fields\Width as WidthField;
+use rias\widthfieldtype\twig\WidthAsPercentExtension;
 use yii\base\Event;
 
 /**
@@ -50,6 +51,8 @@ class WidthFieldtype extends Plugin
             function (RegisterComponentTypesEvent $event) {
                 $event->types[] = WidthField::class;
             }
-        );
+		);
+
+		Craft::$app->view->registerTwigExtension(new WidthAsPercentExtension);
     }
 }
