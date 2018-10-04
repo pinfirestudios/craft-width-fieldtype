@@ -1,6 +1,8 @@
 <?php
 namespace rias\widthfieldtype\twig;
 
+use Craft;
+
 class WidthAsPercentExtension extends \Twig_Extension
 {
 	public function getName()
